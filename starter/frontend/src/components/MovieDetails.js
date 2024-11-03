@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function MovieDetail({ movie }) {
+function MovieDetails({ movie }) {
   const [details, setDetails] = useState(null);
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_MOVIE_API_URL}/movies/${movie.id}`).then((response) => {
@@ -17,4 +17,4 @@ function MovieDetail({ movie }) {
   );
 }
 
-export default MovieDetail;
+export default MovieDetails;
