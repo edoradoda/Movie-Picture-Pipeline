@@ -61,9 +61,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./starter/frontend
 
       - name: Run tests
         run: npm run test
+        working-directory: ./starter/frontend
 
   # Build Job
   build:
@@ -88,6 +90,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./starter/frontend
 
       - name: Build with Docker
         run: |
