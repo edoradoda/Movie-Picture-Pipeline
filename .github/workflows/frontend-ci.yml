@@ -32,11 +32,11 @@ jobs:
       
       - name: Install dependencies
         run: npm install
-        working-directory: ./Movie-Picture-Pipeline/starter/frontend
+        working-directory: ./starter/frontend
 
       - name: Run linter
         run: npm run lint
-        working-directory: ./Movie-Picture-Pipeline/starter/frontend
+        working-directory: ./starter/frontend
 
 
   # Test Job
