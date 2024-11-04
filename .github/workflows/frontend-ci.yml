@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Frontend Continuous Integration
 
 on:
   # Manual trigger using the workflow_dispatch event
@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - main
-env:
-  BUCKET_NAME: 'uda-iye-bucket'
 
 jobs:
   # Linting Job
