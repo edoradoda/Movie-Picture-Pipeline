@@ -93,7 +93,7 @@ jobs:
           CONTAINER_NAME: backend
           IMAGE_NAME: ${{ steps.login-ecr.outputs.registry }}/backend:${{ github.sha }}
         run: |
-          envsubst < ./starter/backend/deployment.yaml > ./starter/backend/deployment-subst.yaml
+          envsubst < ./starter/backend/k8s/deployment.yaml > ./starter/backend/k8s/deployment-subst.yaml
 
       - name: Update kube config
         run: aws eks update-kubeconfig --name cluster

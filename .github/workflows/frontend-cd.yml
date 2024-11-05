@@ -87,7 +87,7 @@ jobs:
           CONTAINER_NAME: frontend
           IMAGE_NAME: ${{ steps.login-ecr.outputs.registry }}/frontend:${{ github.sha }}
         run: |
-          envsubst < ./starter/frontend/deployment.yaml > ./starter/frontend/deployment-subst.yaml
+          envsubst < ./starter/frontend/k8s/deployment.yaml > ./starter/frontend/k8s/deployment-subst.yaml
 
       - name: Update kube config
         run: aws eks update-kubeconfig --name cluster
