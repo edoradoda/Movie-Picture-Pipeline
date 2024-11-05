@@ -16,6 +16,7 @@ COPY . .
 
 # Build the app
 RUN yarn build
+RUN yarn global add serve
 
 
 # Expose the port used by the React app
