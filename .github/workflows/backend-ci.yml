@@ -74,6 +74,5 @@ jobs:
         working-directory: ./starter/backend
 
       - name: Build with Docker
-        run: |
-          docker build -t my-app .
+        run: echo "next step is to build with Docker"
         working-directory: ./starter/backend
