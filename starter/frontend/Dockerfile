@@ -15,12 +15,12 @@ RUN npm install
 COPY . .
 
 # Build the app
-# RUN npm run build
-RUN npm start
+RUN yarn build
 
 
 # Expose the port used by the React app
 EXPOSE 3000
 
 # Start the React app when the container starts
-CMD ["npm", "run", "serve"]
+CMD ["yarn", "serve"]
+# CMD ["npm", "run", "serve"]
