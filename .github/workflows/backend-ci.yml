@@ -28,7 +28,7 @@ jobs:
         working-directory: ./starter/backend
 
       - name: Run linter
-        run: pipenv run flake8 .
+        run: pipenv run lint
         working-directory: ./starter/backend
 
   # test Job
@@ -74,5 +74,17 @@ jobs:
         working-directory: ./starter/backend
 
       - name: Build with Docker
-        run: echo "next step is to build with Docker"
+        run: docker build --tag mp-backend:latest .
+        working-directory: ./starter/backend
+
+      - name: Run the image
+        run: docker run -p 5000:5000 --name mp-backend -d mp-backend
+        working-directory: ./starter/backend
+      
+      - name: Check the running application
+        run: curl http://localhost:5000/movies
+        working-directory: ./starter/backend
+
+      - name: Review logs
+        run: docker logs -f mp-backend
         working-directory: ./starter/backend

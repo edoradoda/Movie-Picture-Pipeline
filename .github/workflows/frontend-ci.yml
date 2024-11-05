@@ -91,5 +91,12 @@ jobs:
         working-directory: ./starter/frontend
 
       - name: Build with Docker
-        run: echo "next step is to build with Docker"
+        run: docker build --build-arg=REACT_APP_MOVIE_API_URL=${{ secrets.REACT_APP_MOVIE_API_URL }} --tag=mp-frontend:latest .
         working-directory: ./starter/frontend
+      
+      - name: Run Docker
+        run: docker run --name mp-frontend -p 3000:3000 -d mp-frontend
+        working-directory: ./starter/frontend
+
+        
+
