@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Build the app
-RUN npm run build
+RUN npm run build && yarn global add serve && serve -s build
 
 # Expose the port used by the React app
 EXPOSE 3000
