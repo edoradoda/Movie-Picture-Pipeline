@@ -5,7 +5,9 @@ import axios from 'axios';
 function MovieList({ onMovieClick }) {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
+    console.log('url:', `${process.env.REACT_APP_MOVIE_API_URL}`);
     axios.get(`${process.env.REACT_APP_MOVIE_API_URL}/movies`).then((response) => {
+      console.log('Response:', response);
       setMovies(response.data.movies);
     });
   }, []);
